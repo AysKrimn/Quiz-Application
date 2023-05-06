@@ -1,0 +1,196 @@
+
+
+/* -------------------------------------------------------------------------------------
+    -----MAİN.HTML------
+----------------------------------------------------------------------------------------*/
+.profil{
+  width: auto;
+  height: 2000px;
+  background: rgba(84, 83, 83, 0.24);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(9.6px);
+   -webkit-backdrop-filter: blur(9.6px);
+   color:white
+ 
+}
+
+
+.main {
+   
+  transition: all 0.5s;
+  -webkit-text-stroke: 1px  #ffffff;
+  font-variation-settings: "wght" 900, "ital" 1;
+  font-size: 22px;
+  text-align: center;
+  color: black;
+  color: transparent;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+ 
+  cursor: pointer;
+}
+
+.main:hover {
+  font-variation-settings: "wght" 100, "ital" 0;
+  text-shadow: none;
+  text-decoration: none;
+  text-shadow: 0px 0px 1px #ffffff,
+  2px 2px 1px #ffffff,
+  3px 3px 2px #000000,
+  2px 2px 1px #ffffff,
+  6px 6px 10px #ffffff;
+}
+
+.container{
+    width: 100%;
+    margin: auto;
+  }
+  
+  .heading{
+    color: #fff;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .main-banner{
+    width: 100%;
+    height: 100vh;
+    background: url(img/bg.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .heading h1{
+    color: #fff;
+    font-weight: 700;
+    font-size: 62px;
+  }
+  
+  .heading p{
+    font-size: 18px;
+    padding: 15px 0px;
+  }
+  
+  .heading h3{
+    color: #ffffff;
+  }
+  
+  #clouds{
+    margin-top: -5%;
+    position: relative;
+    z-index: 1;
+  }
+  
+  #clouds path {
+    fill: #ffffff;
+    bottom: -10px;
+    overflow: hidden;
+    stroke: #ffffff;
+  }
+  
+
+/* -------------------------------------------------------------------------------------
+    -----LOGİN--REGİSTER------
+----------------------------------------------------------------------------------------*/
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #0045c5dc;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151))
+  }
+
+.form-btn-login:focus{
+  background-color: black;
+  border: 1px solid whitesmoke;
+}
+
+
+
+
+.gradient-custom-4 {
+ /* fallback for old browsers */
+ background: #0045c5dc;
+  
+ /* Chrome 10-25, Safari 5.1-6 */
+ background: -webkit-linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151));
+ 
+ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ background: linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151))
+}
+
+
+/* -------------------------------------------------------------------------------------
+    -----İNDEX------
+----------------------------------------------------------------------------------------*/
+
+.navbar{
+ background: linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151));
+ /* box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 30px rgb(255, 255, 255), 0 0 40px rgb(255, 255, 255); */
+}
+
+
+.qtitle{
+  border-bottom: 1px solid whitesmoke;
+}
+
+.qtitle h3 {
+  position: relative; /* konumlandırmak için */
+  color: white;
+  text-shadow: 0px 3px rgb(255, 255, 255), 0px 3px 5px rgba(0, 0, 0, 0.8);
+}
+.qtitle h3::after {
+  content: ""; /* içerik olmadan bir öğe oluşturuyoruz */
+  position: absolute; /* konumlandırma */
+  bottom: -3px; /* yazının altında 3px konumlandırma */
+  left: 0; /* soldan başlaması */
+  width: 100%; /* tam genişlikte */
+  height: 3px; /* 3px yükseklik */
+  background: linear-gradient(90deg, rgb(255, 255, 255), rgba(0, 0, 0, 0.2)); /* gradient arka plan */
+  z-index: -1; /* yazının altında */
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.8); /* neon etkisi */
+}
+
+.card {
+  height: 100%;
+}
+
+.card img{
+  height: 200px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-body .btn {
+  align-self: center;
+   /* fallback for old browsers */
+  background: #0045c5dc;
+    
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151))
+    
+}
+
+.qbtn{
+  width: 300px;
+  justify-content: center;
+}
+
+
+
+
+
+
+
