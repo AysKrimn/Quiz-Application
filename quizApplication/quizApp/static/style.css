@@ -3,17 +3,7 @@
 /* -------------------------------------------------------------------------------------
     -----MAİN.HTML------
 ----------------------------------------------------------------------------------------*/
-.profil{
-  width: auto;
-  height: 2000px;
-  background: rgba(84, 83, 83, 0.24);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(9.6px);
-   -webkit-backdrop-filter: blur(9.6px);
-   color:white
- 
-}
+
 
 
 .main {

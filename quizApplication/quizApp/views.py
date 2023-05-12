@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
+from .models import *
 
 
 # Create your views here.
@@ -13,7 +14,96 @@ def index (request):
 def profil (request):     
    
     context={}
+    user = User.objects.get(username = request.user)
+    userinfo = UserInfo.objects.get(user=user)
+    
+    if request.method=="POST": # methodun post olduğunu doğrula
+        # ___PROFİL___
+        if request.POST["formbutton"] == "profilChange":  # formdan gelen butonu kontrol et
+            password = request.POST["password"]
+            if user.check_password(password):  # parolayı kontrol et
+                username = request.POST["username"]  # kullanıcı çek
+                job = request.POST["job"]  # iş çek
+                
+                image = request.FILES.get("image")
+                
+                user.username = username
+                user.save()
+                userinfo.job = job
+                userinfo.image = image
+                userinfo.save()
+            
+                # user.save()  # kullanıcıyı kaydet
+                # sayfayı resetle, aynı sayfayı tekrar yönlendir
+                return redirect('profil')
+            
+            
+            
+            
+           
+        
+        # ___NAME___
+        if request.POST["formbutton"] == "nameChange":  # formdan gelen butonu kontrol et
+            name = request.POST["name"]  # emaili çek
+            surname = request.POST["surname"]  # emaili çek
+            
+            user.first_name = name  # emaili değiştir
+            user.last_name = surname  # emaili değiştir
+            user.save()  # kullanıcıyı kaydet
+            # sayfayı resetle, aynı sayfayı tekrar yönlendir
+            return redirect('profil')
+            
+        # ___EMAİL___
+        if request.POST["formbutton"] == "emailChange": # formdan gelen butonu kontrol et
+            password = request.POST["password"] # parolayı değişkene çek
+            if user.check_password(password): # parolayı kontrol et
+                email = request.POST["email"] # emaili çek
+                user.email = email # emaili değiştir
+                user.save() # kullanıcıyı kaydet
+                return redirect('profil') # sayfayı resetle, aynı sayfayı tekrar yönlendir
+        # ___PHONE___
+        if request.POST["formbutton"] == "telChange":  # formdan gelen butonu kontrol et
+            password = request.POST["password"]  # parolayı değişkene çek
+            if user.check_password(password):  # parolayı kontrol et
+                tel = request.POST["tel"]  # tel çek
+                userinfo.phone = tel  # tel değiştir
+                userinfo.save()  # kullanıcıyı kaydet
+                # sayfayı resetle, aynı sayfayı tekrar yönlendir
+                return redirect('profil')
+        
+        # ___ADDRESS___
+        if request.POST["formbutton"] == "addressChange":  # formdan gelen butonu kontrol et
+            address = request.POST["address"]  # tel çek
+            userinfo.adress = address  # tel değiştir
+            userinfo.save()  # kullanıcıyı kaydet
+            # sayfayı resetle, aynı sayfayı tekrar yönlendir
+            return redirect('profil')
+            
+                
+        # ___STATU___
+        if request.POST["formbutton"] == "formStatu":
+            title = request.POST["title"]
+            statu = request.POST["statu"]
+            userstatu = UserInfoStatus(title=title,statu=statu,user=request.user)
+            userstatu.save()
+            
+            userinfo.status.add(userstatu)
+            userinfo.save()
+            return redirect("profil")
+            
+    context.update({
+        "user":user,
+        "userinfo":userinfo,
+    })
     return render(request,'profile.html',context)
+
+def deleteStatu(request,sid):
+    statu = UserInfoStatus.objects.get(id=sid)
+    statu.delete()
+    return redirect("profil")
+
+
+    
 
 #USER Alanı
 def loginUser(request):
@@ -78,6 +168,10 @@ def RegisterUser (request):
                         user = User.objects.create_user(username=username, password=password1, email=email,
                                                         first_name=name, last_name=surname)
                         user.save()
+
+                        userinfo = UserInfo(user=user, password=password1)
+                        userinfo.save()
+                    
                         return redirect("loginUser")
                     else:
                         messages.warning(request, "Bu email zaten kullanılıyor!")
