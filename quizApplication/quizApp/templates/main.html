@@ -59,7 +59,7 @@
            
             <div class="dropdown" style="margin-right: 15px;">
              
-              <a class="btn text-white dropdown-toggle" href="#" role="button"
+              <a class="btn text-white dropdown-toggle" href="{% url profil %}" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false">
                   {{ request.user }}
                  
@@ -74,7 +74,7 @@
               
             
            
-            <form method="GET" action="{% url 'index' %}" class="d-flex" role="search" style="margin-right: 500px;">
+            <form method="GET" action="" class="d-flex" role="search" style="margin-right: 500px;">
               <input class="form-control me-2" type="search" name="query" placeholder="Site de arat" aria-label="Search">
               <button class="btn text-white" type="submit">Ara</button>
             </form>
