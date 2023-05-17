@@ -21,5 +21,9 @@ from quizApp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name="anasayfa")
+    path('', index, name="anasayfa"),
+    path('loginUser/', loginUser, name="loginUser"),
+    path('RegisterUser/', RegisterUser, name="RegisterUser"),
+    path('profile/', profil, name="profil"),
+    path('main/', main, name="main"),
 ]
