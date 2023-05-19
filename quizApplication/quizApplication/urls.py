@@ -1,30 +1,39 @@
-"""quizApplication URL Configuration
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+from quiz.views import *
 
-# quizApp viewslerini buraya import et
-from quizApp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name="index"),
-    path('login.html', loginUser, name='login'),
-    # path('loginUser/', loginUser, name="loginUser"),
-    path('RegisterUser/', RegisterUser, name="RegisterUser"),
-    path('profile/', profil, name="profile"),
-    path('main.html', main, name="main"),
-]
+    path('',index, name="index" ),
+    path('main/',main, name="main" ),
+    path('ders/',ders, name="ders" ),
+    path('anasayfa/',anasayfa, name="anasayfa" ),
+    # DERSLER
+    path('html/',html, name="html" ),
+    path('<int:pk>/', html_detail, name='html_detail'),
+    path('css/',css, name="css" ),
+    path('js/',js, name="js" ),
+    path('bootstrap/',bootstrap, name="bootstrap" ),
+    path('python/',python, name="python" ),
+    path('django/',django, name="django" ),
+    path('c#/',c, name="c" ),
+    path('c++/',cc, name="cc" ),
+
+     #USER
+    path('login/', loginUser, name="loginUser"),
+    path('register/', RegisterUser, name="RegisterUser"),
+    path('logout/',logoutUser,name='logoutUser'),
+
+    path('profil/',profil,name='profil'),
+    path('profil/deleteStatu/<sid>/', deleteStatu, name="deleteStatu"), # Yetenek Silme
+    
+
+
+
+
+
+]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
