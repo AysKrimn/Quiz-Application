@@ -29,26 +29,31 @@
 </head>
 <body>
 
-<div  id="header" class="banner">
-  
-    <div class="sp-container">
-      <div class="sp-content">
-        <div class="sp-globe"></div>
-        <h2 class="frame-1">Front-End ve Back-End</h2>
-        <h2 class="frame-2">Alanın da Uzman Öğretmenlerden Alınan</h2>
-        <h2 class="frame-3">Sorular ve Ders İçerikleri ile</h2>
-        <h2 class="frame-4">Yazılım Öğren</h2>
-        <h2 class="frame-5">
-          <span>Dersler ve Quizler İçin</span>
-          <span>Giriş Yap</span>
-          <span>Veya Kayıt Ol</span>
-        </h2>
+<section id="home" class="section main-banner d-flex">
+    <div class="container">
+      <div class="heading text-center text-white">
+        <div class="row">
+          <div class="col-md-12">
+            <h3>Farklı Zorluk Seviyelerinde Bilgi Sınavları ve Programlama Dilleri Hakkında Notlar</h3>
+
+            <p>"Merhaba! Quiz web sitemize hoş geldiniz. Burada farklı zorluk seviyelerindeki sınavlarla bilginizi test edebilir ve aynı zamanda programlama dilleri hakkında ufak notlar okuyarak bilgilerinizi taze tutabilirsiniz. Şimdi size sunduğumuz olanaklardan yararlanmaya başlayalım!"</p>
+
+            <div id="typed-string">
+
+            </div>
+            <span id="typed"></span>
+
+
+            <div class="button-main mt-4">
+              <a class="btn btn-outline-light btn-lg m-2" href="{% url 'login' %}" role="button" rel="nofollow">GO TO LOGIN</a>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
-    <a class="sp-circle-link" href="{% url 'loginUser' %}">Giriş</a>
-    <video src="../static/img/Cyberpunk Code Hacker Glitch Hi-Tech Background video _ Footage _ Screensaver.mp4"  autoplay muted loop></video>
-  
-</div>
+  </section>
+
 
 
 

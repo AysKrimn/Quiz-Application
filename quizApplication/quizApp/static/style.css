@@ -56,7 +56,7 @@
   .main-banner{
     width: 100%;
     height: 100vh;
-    background: url(img/bg.jpg);
+    background: url(img/bg-index.jpg);
     background-position: center;
     background-size: cover;
   }
@@ -213,19 +213,67 @@
 ----------------------------------------------------------------------------------------*/
 
 .navbar{
- background: linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151));
- /* box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 30px rgb(255, 255, 255), 0 0 40px rgb(255, 255, 255); */
-}
+  background: linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151));
+  box-shadow: 0 0 10px rgb(217, 228, 217), 0 0 20px rgb(217, 228, 217), 0 0 30px rgb(217, 228, 217), 0 0 40px rgb(217, 228, 217);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: auto;
+ }
+ .nav-link {
+   transition: all 0.2s ease-in-out;
+ }
+ 
+ .nav-link:hover {
+   border-bottom: 1px solid white;
+   padding-bottom: 4px;
+ }
+ 
+ .nav-drop-link{
+   text-decoration: none;
+ }
+ 
+ .search {
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+ }
+ 
+ .search-nav{
+   width: 600px;
+ }
+ 
+ .search-nav {
+   position: relative;
+   padding-right: 50px; /* ya da buton genişliğine göre istediğiniz bir değer */
+ }
+ 
+ .search-nav .btn {
+   /* position: absolute; */
+   top: 0;
+   right: 0;
+ }
+ 
+ 
+ @media screen and (max-width: 992px) {
+   .search {
+     position: static;
+     transform: none;
+   }
+ }
 
 
-.qtitle{
+ .qtitle{
   border-bottom: 1px solid whitesmoke;
+  padding-top: 5rem;
 }
 
 .qtitle h3 {
   position: relative; /* konumlandırmak için */
   color: white;
-  text-shadow: 0px 3px rgb(255, 255, 255), 0px 3px 5px rgba(0, 0, 0, 0.8);
+  text-shadow: 0px 3px green, 0px 3px 5px rgba(0, 0, 0, 0.8);
 }
 .qtitle h3::after {
   content: ""; /* içerik olmadan bir öğe oluşturuyoruz */
@@ -234,7 +282,7 @@
   left: 0; /* soldan başlaması */
   width: 100%; /* tam genişlikte */
   height: 3px; /* 3px yükseklik */
-  background: linear-gradient(90deg, rgb(255, 255, 255), rgba(0, 0, 0, 0.2)); /* gradient arka plan */
+  background: linear-gradient(90deg, green, rgba(0, 0, 0, 0.2)); /* gradient arka plan */
   z-index: -1; /* yazının altında */
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.8); /* neon etkisi */
 }
@@ -270,8 +318,6 @@
   width: 300px;
   justify-content: center;
 }
-
-
 
 
 

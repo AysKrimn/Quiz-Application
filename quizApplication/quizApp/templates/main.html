@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="tr">
     <head>
@@ -34,25 +35,32 @@
 
     <div class="header vh100 gradient-custom">
 
-      <nav class="navbar navbar-expand-lg buton">
-        <div class="container-fluid">
-        
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <a class="navbar-brand text-white" href="{% url 'index' %}">LOGO</a>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav ms-4">
               <li class="nav-item">
-                <a class="nav-link text-dark main " href="{% url 'main' %}">Anasayfa</a>
+                <a class="nav-link text-white" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-dark main " href="#">Dersler</a>
+                <a class="nav-link text-white" aria-current="page" href="#">Lessons</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-dark main " href="#">Quziler</a>
-              </li>                      
+                <a class="nav-link text-white" aria-current="page" href="#">Lessons</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="#">Lessons</a>
+              </li>
             </ul>
-            
+            <form class="search-nav d-flex mx-auto my-2 my-lg-0" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+
             {% if request.user.is_authenticated %}
            
             
@@ -71,16 +79,27 @@
               </ul>
           </div>
             {% endif %}
-              
-            
-           
-            <form method="GET" action="" class="d-flex" role="search" style="margin-right: 500px;">
-              <input class="form-control me-2" type="search" name="query" placeholder="Site de arat" aria-label="Search">
-              <button class="btn text-white" type="submit">Ara</button>
-            </form>
+
+
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-drop-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                  </svg>
+                  Profile
+              </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'profile' %}">Account</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="{% url 'login' %}">Log Out</a></li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
+      
 
 
         <div class="container">
@@ -90,7 +109,7 @@
             <div class="row mt-5">
                 <div class="col-md-3 mb-4">
                     <div class="card ">
-                        <img src="img/html5.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+                        <img src="{% static 'img/html5.jpg' %}" class="card-img-top" alt="Fissure in Sandstone"/>
                         <div class="card-body">
                           <h5 class="card-title">HTML5</h5>
                           <p class="card-text">Kendini sınamak ister misin? HTML temelleri hakkında ne kadar bilgi sahibisin? Hadi test edelim!</p>
@@ -100,7 +119,7 @@
                 </div>
                 <div class="col-md-3 mb-4">
                     <div class="card">
-                        <img src="img/css.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+                        <img src="{% static 'img/css.jpg' %}" class="card-img-top" alt="Fissure in Sandstone"/>
                         <div class="card-body">
                           <h5 class="card-title">CSS3</h5>
                           <p class="card-text">CSS hakkında ne kadar bilgi sahibisin? Kendini sınamak için hazır mısın? Hadi birlikte öğrenelim!</p>
@@ -110,7 +129,7 @@
                 </div>
                 <div class="col-md-3 mb-4">
                     <div class="card">
-                        <img src="img/bootstrap.webp" class="card-img-top" alt="Fissure in Sandstone"/>
+                        <img src="{% static 'img/bootstrap.webp' %}" class="card-img-top" alt="Fissure in Sandstone"/>
                         <div class="card-body">
                           <h5 class="card-title">BOOTSTRAP</h5>
                           <p class="card-text">Bootstrap ile tanışmak için en iyi yol sınamak olabilir. Hazır mısın? Birlikte bu konuda daha fazla öğrenelim!</p>
@@ -120,7 +139,7 @@
                 </div>
                 <div class="col-md-3 mb-4">
                     <div class="card">
-                        <img src="img/js.webp" class="card-img-top" alt="Fissure in Sandstone"/>
+                        <img src="{% static 'img/js.webp' %}" class="card-img-top" alt="Fissure in Sandstone"/>
                         <div class="card-body">
                           <h5 class="card-title">JAVASCRİPT</h5>
                           <p class="card-text">JS öğrenmek için, neyin mümkün olduğunu keşfetmek yerine, kendini sınayabilirsin. Hadi birlikte test edelim!</p>
@@ -139,7 +158,7 @@
             <div class="row mt-5">
                 <div class="col-md-3 mb-4">
                     <div class="card">
-                        <img src="img/python.webp" class="card-img-top" alt="Fissure in Sandstone"/>
+                        <img src="{% static 'img/python.webp' %}" class="card-img-top" alt="Fissure in Sandstone"/>
                         <div class="card-body">
                           <h5 class="card-title">PYTHON</h5>
                           <p class="card-text">Kendini sınamak ister misin? Python bilginle ne kadar ilerlediğini görelim. Haydi, öğrenmeye başlayalım!</p>
@@ -149,7 +168,7 @@
                 </div>
                 <div class="col-md-3 mb-4">
                     <div class="card">
-                        <img src="img/django.png" class="card-img-top" alt="Fissure in Sandstone"/>
+                        <img src="{% static 'img/django.png' %}" class="card-img-top" alt="Fissure in Sandstone"/>
                         <div class="card-body">
                           <h5 class="card-title">DJANGO</h5>
                           <p class="card-text">Django öğrenmek için hazır mısın? Kendini sınamak istersen, bu quiz senin için! Hadi, test etmeye başlayalım.</p>
@@ -159,7 +178,7 @@
                 </div>
                 <div class="col-md-3 mb-4">
                     <div class="card">
-                        <img src="img/csharp.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+                        <img src="{% static 'img/csharp.jpg' %}" class="card-img-top" alt="Fissure in Sandstone"/>
                         <div class="card-body">
                           <h5 class="card-title">C#</h5>
                           <p class="card-text">C# öğrenmek için ne kadar ilerledin? Kendini sınayarak daha da ilerleyebilirsin! Haydi, birlikte sınayalım.</p>
@@ -169,7 +188,7 @@
                 </div>
                 <div class="col-md-3 mb-4">
                     <div class="card">
-                        <img src="img/cplusplus.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+                        <img src="{% static 'img/cplusplus.jpg' %}" class="card-img-top" alt="Fissure in Sandstone"/>
                         <div class="card-body">
                           <h5 class="card-title">C++</h5>
                           <p class="card-text">C++ öğrenmek için hazır mısın? Kendini sınayarak öğrenmenin en iyi yolu! Hadi, test etmeye başlayalım.</p>
