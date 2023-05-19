@@ -1,19 +1,34 @@
 from django.contrib import admin
 from .models import *
+from  embed_video.admin  import  AdminVideoMixin
+# Register your models here.
+
+# Abstract User
+# AbstractUser ile kendi user modelimizin oluşturulması
+# User modeline Avatar eklenecek
+# Quiz Modeli
+# Quiz Başlığı
+# Quiz Süresi
+# Quiz Banner 
+# Quiz Oluşturulma Tarihi
+# Quiz Kategorileri modeli
+# Quiz Başlığı
+# Quiz Süresi
+# Quiz Banner 
+# Quiz Oluşturulma Tarihi
+# Quiz Kategorisi (Foregin Key)
 
 
-class QuizesAdmin(admin.ModelAdmin):
-    list_display = ('title', 'category','detail' ,'date_joined', 'timer')
-    list_filter = ('title', 'category')
+admin.site.register(Category)
+admin.site.register(Post)
 
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('title', 'detail')
-    list_filter = ('title', 'detail')
 
-class CustomUserAdmin(admin.ModelAdmin):
-    list_display = ('username', 'email', 'first_name', 'last_name')
-    list_filter = ('username', 'email')
+# USER
+admin.site.register(UserInfo)
+admin.site.register(UserInfoStatus)
 
-admin.site.register(Category, CategoryAdmin)
-admin.site.register(Quizes, QuizesAdmin)
-admin.site.register(CustomUser, CustomUserAdmin)
+
+class  tutorialAdmin(AdminVideoMixin, admin.ModelAdmin):
+	pass
+
+admin.site.register(tutorial, tutorialAdmin)
