@@ -1,135 +1,104 @@
-<!DOCTYPE html>
-<html lang="tr">
-    <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+{% extends 'base.html' %}
+{% load static %}
 
-    <!-- Font Awesome -->
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    rel="stylesheet"
-    />
-    <!-- Google Fonts -->
-    <link
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    rel="stylesheet"
-    />
-    <!-- MDB -->
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
-    rel="stylesheet"
-    />
-    <!-- BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <!-- CSS -->
-    <link rel="stylesheet" href="../static/style.css">
-</head>
-<body>
 
-  <section class="vh-100" style="background-color: #eee;">
-    <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-lg-12 col-xl-11">
-          <div class="card text-black" style="border-radius: 25px;">
-            <div class="card-body p-md-5">
-              <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+{% block body %}
   
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
-                  {% if messages %}
-                  <ul style="list-style-type: none;">
-                    {% for i in messages %}
-                      <li class="text-start" style="color: red;">{{ i }}</li>   
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-  
-                  <form method="POST" class="mx-1 mx-md-4">
-                      {% csrf_token %}
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                      <div class="inputBoxRegister mb-4">
-                        <input name="name" type="text" id="form3Example1c" required="required"/>
-                        <label for="form3Example1c">Adınız</label>
-                      </div>
-                    </div>
-  
-  
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                      <div class="inputBoxRegister mb-4">
-                        <input name="surname" type="text" id="form3Example1c" required="required"/>
-                        <label for="form3Example1c">Soy Adınız</label>
-                      </div>
-                    </div>
+<section class="gradient-custom vh-100" style="background-color: #202020;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black bg-dark" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                      <div class="inputBoxRegister mb-4">
-                        <input name="username" type="text" id="form3Example1c" required="required"/>
-                        <label for="form3Example1c">Kullanıcı Adı</label>
-                      </div>
+                <p class="text-center text-light h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+                {% if messages %}
+                <ul style="list-style-type: none;">
+                  {% for i in messages %}
+                    <li class="text-start" style="color: red;">{{ i }}</li>   
+                  {% endfor %}
+                </ul>
+              {% endif %}
+
+                <form method="POST" class="mx-1 mx-md-4">
+                    {% csrf_token %}
+                  <div class="d-flex flex-row align-items-center mb-4 form-white">
+                    <i class="fas fa-user fa-lg me-3 fa-fw text-light"></i>
+                    <div  class="form-outline flex-fill mb-0">
+                      <input class="bg-white w-100 form-btn-login  form-control-lg" name="name" type="text"  placeholder="Adınız"/>
+                      
                     </div>
-  
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                      <div class="inputBoxRegister mb-4">
-                        <input name="email" type="text" id="form3Example3c" required="required"/>
-                        <label for="form3Example3c">Email</label>
-                      </div>
+                  </div>
+
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw text-light"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input class="bg-white w-100  form-btn-login form-control-lg"  name="surname" type="text"  class="form-control" placeholder="Soyadınız" />
+                     
                     </div>
-  
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                      <div class="inputBoxRegister mb-4">
-                        <input name="password1" type="password" id="form3Example4c" required="required"/>
-                        <label for="form3Example4c">Şifre</label>
-                      </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw text-light"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input class="bg-white w-100 form-btn-login form-control-lg" name="username" type="text" id="form3Example1c" class="form-control" placeholder="Kullanıcı Adı" />
+                     
                     </div>
-  
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                      <div class="inputBoxRegister mb-4">
-                        <input  name="password2" type="password" id="form3Example4cd" required="required"/>
-                        <label for="form3Example4cd">Şifre Tekrarı</label>
-                      </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw text-light"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input class="bg-white w-100 form-btn-login form-control-lg" name="email" type="email" id="form3Example3c" class="form-control" placeholder="E-mail" />
+                     
                     </div>
-  
-                  
-                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <button type="submit" href="index.html" class="btn btn-primary btn-lg">Register</button>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw text-light"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input class="bg-white w-100 form-btn-login form-control-lg" name="password1" type="password" id="form3Example4c" class="form-control" placeholder="Şifre"/>
+                      
                     </div>
-  
-                  </form>
-  
-                </div>
-                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-  
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                    class="img-fluid" alt="Sample image">
-  
-                </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-key fa-lg me-3 fa-fw text-light"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input class="bg-white w-100 h-100 form-btn-login form-control-lg"  name="password2" type="password" id="form3Example4cd" class="form-control" placeholder="Şifre Tekrarı" />
+                     
+                    </div>
+                  </div>
+
+                
+                  <div class="d-flex justify-content-center mx-4 mb-1 mb-lg-4">
+                    <button type="submit" href="index.html" class="btn btn-primary btn-lg">Register</button>
+                  </div>
+
+                </form>
+
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                  class="img-fluid" alt="Sample image">
+
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+{% endblock body %}
+  
 
 
 
 
 
-  <!-- MDB -->
-    <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/#[[latestVersion]]#/mdb.min.js"
-    ></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>
-</body>
-</html>
+  
