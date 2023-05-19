@@ -20,13 +20,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # Django Application Tokenini buraya Gir
-SECRET_KEY = ''
+SECRET_KEY = 'django-insecure-j&shersei=xe@2)0+u*37&f-pfpaq6!wu!k4#4tn)vi*7y-e#%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'quizApp.CustomUser'
 
 # Application definition
 
