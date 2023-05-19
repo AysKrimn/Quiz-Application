@@ -3,17 +3,6 @@
 /* -------------------------------------------------------------------------------------
     -----MAİN.HTML------
 ----------------------------------------------------------------------------------------*/
-.profil{
-  width: auto;
-  height: 2000px;
-  background: rgba(84, 83, 83, 0.24);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(9.6px);
-   -webkit-backdrop-filter: blur(9.6px);
-   color:white
- 
-}
 
 
 .main {
@@ -56,7 +45,7 @@
   .main-banner{
     width: 100%;
     height: 100vh;
-    background: url(img/bg-index.jpg);
+    background: url(img/bg.jpg);
     background-position: center;
     background-size: cover;
   }
@@ -97,6 +86,8 @@
 .gradient-custom {
   /* fallback for old browsers */
   background: #0045c5dc;
+  color: white !important;
+
   
   /* Chrome 10-25, Safari 5.1-6 */
   background: -webkit-linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151));
@@ -104,6 +95,15 @@
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151))
   }
+
+.form-btn-login:focus{
+  background-color: black;
+  border: 1px solid whitesmoke;
+}
+
+
+
+
 
 .gradient-custom-4 {
  /* fallback for old browsers */
@@ -116,164 +116,25 @@
  background: linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151))
 }
 
-.cardBox {
-  background-color: #212429;
-}
-
-.inputBox {
-  width: 100%;
-  position: relative;
-}
-
-.inputBox label {
-  position: absolute;
-  left: 5px;
-  top: 0;
-  padding: 13px;
-  pointer-events: none;
-  font-size: .9em;
-  color: grey;
-  text-transform: uppercase;
-  transition:all .3s ease-in-out;
-}
-
-.inputBox input {
-  padding: 10px;
-  width: 100%;
-  border: 1px solid whitesmoke;
-  background: transparent;
-  border-radius: 5px;
-  outline: none;
-  color: white;
-  font-size: 1em;
-}
-
-.label::before {
-  content: "";
-  height: 5px;
-  position: absolute;
-  left: 0;
-  top: 10px;
-  width: 100%;
-  z-index: -1;
-}
-
-.inputBox input:valid~label,
-.inputBox input:focus~label {
-  color: white;
-  transform: translateX(10px) translateY(-7px);
-  font-size: .6em;
-  padding: 0 6px;
-  background: #212429;
-  letter-spacing: 1.5px;
-} 
-
-.inputBoxRegister {
-  width: 80%;
-  position: relative;
-}
-
-.inputBoxRegister label {
-  position: absolute;
-  left: 5px;
-  top: 0;
-  padding: 11px;
-  pointer-events: none;
-  font-size: .9em;
-  color: grey;
-  text-transform: uppercase;
-  transition:all .3s ease-in-out;
-}
-
-.inputBoxRegister input {
-  padding: 8px;
-  width: 100%;
-  border: 2px solid black;
-  background: transparent;
-  border-radius: 5px;
-  outline: none;
-  color: black;
-  font-size: 1em;
-}
-
-.inputBoxRegister input:valid~label,
-.inputBoxRegister input:focus~label {
-  color: black;
-  transform: translateX(10px) translateY(-7px);
-  font-size: .7em;
-  font-weight: 600;
-  padding: 0 6px;
-  background: white;
-  letter-spacing: 1.5px;
-} 
-
 
 /* -------------------------------------------------------------------------------------
     -----İNDEX------
 ----------------------------------------------------------------------------------------*/
 
 .navbar{
-  background: linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151));
-  box-shadow: 0 0 10px rgb(217, 228, 217), 0 0 20px rgb(217, 228, 217), 0 0 30px rgb(217, 228, 217), 0 0 40px rgb(217, 228, 217);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  height: auto;
- }
- .nav-link {
-   transition: all 0.2s ease-in-out;
- }
- 
- .nav-link:hover {
-   border-bottom: 1px solid white;
-   padding-bottom: 4px;
- }
- 
- .nav-drop-link{
-   text-decoration: none;
- }
- 
- .search {
-   position: absolute;
-   left: 50%;
-   transform: translateX(-50%);
- }
- 
- .search-nav{
-   width: 600px;
- }
- 
- .search-nav {
-   position: relative;
-   padding-right: 50px; /* ya da buton genişliğine göre istediğiniz bir değer */
- }
- 
- .search-nav .btn {
-   /* position: absolute; */
-   top: 0;
-   right: 0;
- }
- 
- 
- @media screen and (max-width: 992px) {
-   .search {
-     position: static;
-     transform: none;
-   }
- }
+ background: linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151));
+ /* box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 30px rgb(255, 255, 255), 0 0 40px rgb(255, 255, 255); */
+}
 
 
- .qtitle{
+.qtitle{
   border-bottom: 1px solid whitesmoke;
-  padding-top: 5rem;
 }
 
 .qtitle h3 {
   position: relative; /* konumlandırmak için */
   color: white;
-  text-shadow: 0px 3px green, 0px 3px 5px rgba(0, 0, 0, 0.8);
+  text-shadow: 0px 3px rgb(255, 255, 255), 0px 3px 5px rgba(0, 0, 0, 0.8);
 }
 .qtitle h3::after {
   content: ""; /* içerik olmadan bir öğe oluşturuyoruz */
@@ -282,7 +143,7 @@
   left: 0; /* soldan başlaması */
   width: 100%; /* tam genişlikte */
   height: 3px; /* 3px yükseklik */
-  background: linear-gradient(90deg, green, rgba(0, 0, 0, 0.2)); /* gradient arka plan */
+  background: linear-gradient(90deg, rgb(255, 255, 255), rgba(0, 0, 0, 0.2)); /* gradient arka plan */
   z-index: -1; /* yazının altında */
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.8); /* neon etkisi */
 }
@@ -319,6 +180,58 @@
   justify-content: center;
 }
 
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.notification {
+	position: absolute;
+	top: 90px;
+	left: 1630px;
+	width: max-content;
+	padding: 20px 15px;
+	border-radius: 4px;
+	background-color: #141619;
+	color: #f6f5f9;
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+	transform: translateY(30px);
+	opacity: 0;
+	visibility: hidden;
+	animation: fade-in 4s linear forwards;
+}
+.notification__progress {
+	position: absolute;
+	left: 5px;
+	bottom: 5px;
+	width: calc(100% - 10px);
+	height: 3px;
+	transform: scaleX(0);
+	transform-origin: left;
+	background-image: linear-gradient(to right, #539bdb, #3250bf);
+	border-radius: inherit;
+	animation: load 3s 0.25s linear forwards;
+}
+@keyframes fade-in {
+	5% {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+	90% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes load {
+	to {
+		transform: scaleY(1);
+	}
+}
 
 
 
