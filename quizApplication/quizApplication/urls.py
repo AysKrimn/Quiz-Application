@@ -22,9 +22,8 @@ from quizApp.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
-    path('login.html', loginUser, name='login'),
-    # path('loginUser/', loginUser, name="loginUser"),
-    path('RegisterUser/', RegisterUser, name="RegisterUser"),
+    path('login', loginUser, name='login'),
+    path('signup', RegisterUser, name="RegisterUser"),
     path('profile/', profil, name="profile"),
     path('main.html', main, name="main"),
 ]
