@@ -6,4 +6,5 @@ dbsqlite ve migration dosyalarınız sizin local dosyalarınızdır projede yap�
 <p>Terminali açıp: <ins>py manage.py makemigrations</ins> daha sonra <ins>py manage.py migrate</ins> komutlarını kullanarak databaseyi güncellemeniz gerekmektedir.</p>
 
 <b> <h2>Projeyi çalıştırmak için gereksinimler</h2></b> <br>
+<p>Aşsağıdaki kütüphaneyi kurmanız gerekmektedir:</p>
 pip install django-embed-video
