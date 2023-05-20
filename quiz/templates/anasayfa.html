@@ -1,0 +1,356 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+    
+    {% block css %}
+     
+     <link rel="stylesheet" href="../static/assets/css/all.min.css">
+     <link rel="stylesheet" href="../static/assets/css/animate.css">
+     <link rel="stylesheet" href="../static/assets/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../static/assets/css/bootstrap.min.css.map">
+     <link rel="stylesheet" href="../static/assets/css/fontawsom-all.min.css">
+     <link rel="stylesheet" href="../static/assets/css/responsive.css">
+     <link rel="stylesheet" href="../static/assets/css/style.css">
+     <link rel="stylesheet" href="../static/assets/css/style.css.map">
+     
+    {% endblock css %}
+        
+{% block body %}
+{% include 'part/header.html' %}
+
+
+  <div class="header h-100 gradient-custom">
+
+   
+    <section class="slider">
+        <div class="slider-main">
+            
+            <div class="container custom-container">
+              <div class="slider-content">
+                <div class="slider-head">
+                  <div class="main-content">
+                    <h1>Yazılımda <span>TÜRKİYENİN</span> Lider Eğitim Platformu</h1>
+                    <p>Bir birinden farklı iyi içerikleri ile sektöre alanın da uzman yazılımcılar yetiştiriyoruz ve tamamen ücretsiz, dersler ve quizleri tamamla eğitim sonun da sertifika almaya hak kazan.</p>
+
+                    <div class="btn-01">
+                      <a href="{% url 'ders' %}">Eğitimlere Başla</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="slider-img">
+                  <img src="../static/assets/images/slider/banner-right-02.png">
+                </div>
+              </div>
+            </div>
+            <div class="waveWrapper waveAnimation">
+                <div class="waveWrapperInner bgTop">
+                  <div class="wave waveTop"></div>
+                </div>
+                <div class="waveWrapperInner bgMiddle">
+                  <div class="wave waveMiddle"></div>
+                </div>
+                <div class="waveWrapperInner bgBottom">
+                  <div class="wave waveBottom"></div>
+                </div>
+              </div>
+        </div>
+    </section>
+
+    <section class="bg-01">
+      <div class="container">
+         <div class="col-12">
+            <div class="heading">
+              <h2>NEDEN BİZİ SEÇMELİSİNİZ</h2>
+            </div>
+          </div>
+        <div class="set-wrapper">
+          <div class="box">
+            <div class="box-items">
+              <div class="icon">
+               
+              </div>
+              <div class="content">
+                <h3>ÇEŞİTLİ KURSLAR</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas magnam quae voluptatum voluptates asperiores iusto error quo sed nobis</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-items">
+              <div class="icon">
+                
+              </div>
+              <div class="content">
+                <h3>ÜCRETSİZ EĞİTİMLER</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas magnam quae voluptatum voluptates asperiores iusto error quo sed nobis</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-items">
+              <div class="icon">
+                
+              </div>
+              <div class="content">
+                <h3>OLAYLAR</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas magnam quae voluptatum voluptates asperiores iusto error quo sed nobis</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-items">
+              <div class="icon">
+               
+              </div>
+              <div class="content">
+                <h3>YETENEKLİ ÖĞRETMENLER</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas magnam quae voluptatum voluptates asperiores iusto error quo sed nobis</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+
+    <section class="bg-04-a" style="background-color: white;">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="heading">
+              <h2>EĞİTMEN KADROMUZ</h2>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-3 sm-6 col-12">
+            <div class="team-main">
+              <div class="img">
+                <img src="../static/assets/images/team/1.png">
+              </div>
+              <div class="team-content">
+                <h3>Merv Adrian</h3>
+                <b>Maths teacher</b>
+                <div class="social">
+                  <ul>
+                    <li><i class="fab fa-facebook-f"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-instagram"></i></li>
+                    <li><i class="fab fa-linkedin-in"></i></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-3 sm-6 col-12">
+            <div class="team-main">
+              <div class="img">
+                <img src="../static/assets/images/team/2.png">
+              </div>
+              <div class="team-content">
+                <h3>Kirk Borne</h3>
+                <b>Science teacher</b>
+                <div class="social">
+                  <ul>
+                    <li><i class="fab fa-facebook-f"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-instagram"></i></li>
+                    <li><i class="fab fa-linkedin-in"></i></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-3 sm-6 col-12">
+            <div class="team-main">
+              <div class="img">
+                <img src="../static/assets/images/team/3.png">
+              </div>
+              <div class="team-content">
+                <h3>Merv Adrian</h3>
+                <b>Language teacher</b>
+                <div class="social">
+                  <ul>
+                    <li><i class="fab fa-facebook-f"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-instagram"></i></li>
+                    <li><i class="fab fa-linkedin-in"></i></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-3 sm-6 col-12">
+            <div class="team-main">
+              <div class="img">
+                <img src="../static/assets/images/team/4.png">
+              </div>
+              <div class="team-content">
+                <h3>Merv Adrian</h3>
+                <b>Social teacher</b>
+                <div class="social">
+                  <ul>
+                    <li><i class="fab fa-facebook-f"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-instagram"></i></li>
+                    <li><i class="fab fa-linkedin-in"></i></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-04">
+      <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="heading">
+                <h2>HABERLER</h2>
+              </div>
+            </div>
+
+              <div class="blog-main-card d-flex">
+                  <article class="blog-sub">
+                      <div class="blog-content">
+                          <img src="../static/assets/images/blog/img-02.jpg">
+                      </div>
+                      <div class="blog-content-section">
+                          <div class="blo-content-title">
+                              <h4>lorem</h4>
+                              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque at numquam, asperiores aut praesentium 
+                                  facilis ratione! Voluptatibus neque dignissimos ipsa atque veniam sint omnis in blanditiis, nemo fugit animi assumenda.</p>
+                          </div>
+                          <div class="blog-admin">
+                              <ol>
+                                  <li><i class="fal fa-user-tie"></i> By Admin</li>
+                                  <li><i class="fal fa-calendar-alt"></i> july 28, 2020</li>
+                              </ol>
+                          </div>
+                      </div>
+                  </article>
+
+                  <article class="blog-sub">
+                      <div class="blog-content">
+                          <img src="../static/assets/images/blog/img-01.jpg">
+                      </div>
+                      <div class="blog-content-section">
+                          <div class="blo-content-title">
+                              <h4>lorem</h4>
+                              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque at numquam, asperiores aut praesentium 
+                                  facilis ratione! Voluptatibus neque dignissimos ipsa atque veniam sint omnis in blanditiis, nemo fugit animi assumenda.</p>
+                          </div>
+                          <div class="blog-admin">
+                              <ol>
+                                  <li><i class="fal fa-user-tie"></i> By Admin</li>
+                                  <li><i class="fal fa-calendar-alt"></i> july 28, 2020</li>
+                              </ol>
+                          </div>
+                      </div>
+                  </article>
+
+                  <article class="blog-sub">
+                      <div class="blog-content">
+                          <img src="../static/assets/images/blog/img-03.jpg">
+                      </div>
+                      <div class="blog-content-section">
+                          <div class="blo-content-title">
+                              <h4>lorem</h4>
+                              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque at numquam, asperiores aut praesentium 
+                                  facilis ratione! Voluptatibus neque dignissimos ipsa atque veniam sint omnis in blanditiis, nemo fugit animi assumenda.</p>
+                          </div>
+                          <div class="blog-admin">
+                              <ol>
+                                  <li><i class="fal fa-user-tie"></i> By Admin</li>
+                                  <li><i class="fal fa-calendar-alt"></i> july 28, 2020</li>
+                              </ol>
+                          </div>
+                      </div>
+                  </article>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+        <div class="fotter-content">
+          <h2>About Us</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut recusandae laboriosam praesentium quisquam voluptatibus. Rerum eligendi magnam impedit soluta voluptatem</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+        <div class="fotter-content">
+          <h2>Quick Links</h2>
+          <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Services</li>
+            <li>Blog</li>
+            <li>Contact Us</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+        <div class="fotter-content">
+          <h2>Address</h2>
+          <ol>
+            <li>First Floor,Vincent Plaza, Kuzhithurai,Marthandam, Kanyakumari Dist
+              Tamilnadu, India - 629163</li>
+
+            <li>sales@smarteyeapps.com</li>
+            <li>+90 555 555 55 55</li>
+          </ol>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="end-footer">
+          <p>Copyright ©2020 smarteyeapps. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <div class="container">
+      
+       
+    </div>
+</div>
+
+
+
+{% endblock body %}
+
+{% block js %}
+<script src="https://kit.fontawesome.com/529f0baa6e.js" crossorigin="anonymous"></script>
+{% endblock js %}
+    
+
+
+
+
+
+
+
+
+
+
+ 
+ 
