@@ -8,3 +8,6 @@ dbsqlite ve migration dosyalarınız sizin local dosyalarınızdır projede yap�
 <b> <h2>Projeyi çalıştırmak için gereksinimler</h2></b> <br>
 <p>Aşsağıdaki kütüphaneyi kurmanız gerekmektedir:</p>
 pip install django-embed-video
+
+<br>
+<strong>Not: Projenizi güncellerken localde olan veritabanınızı mutlaka saklayın.</strong>
