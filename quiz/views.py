@@ -198,7 +198,7 @@ def loginUser(request):
             messages.warning(request, "Kullanıcı adı veya şifre yanlış!")
             return redirect("loginUser")
     
-    return render(request,'Giriş.html')
+    return render(request,'giris.html')
 
 def RegisterUser (request):
     if request.method == "POST":
