@@ -1,3 +1,4 @@
+
 {% load static %}
 
 {% block css %}
@@ -19,6 +20,7 @@ rel="stylesheet"
   <!-- CSS -->
   <link rel="stylesheet" href="../static/style.css">
   <link rel="stylesheet" href="../static/animasyon.css">
+ 
 {% endblock css %}
   
 
@@ -40,26 +42,39 @@ rel="stylesheet"
           <li class="nav-item">
             <a class="nav-link text-dark main " href="{% url 'main' %}">Quziler</a>
           </li>                      
+          <li class="nav-item">
+            <div class="overlay">
+              <a class="mk-search-trigger mk-fullscreen-trigger nav-link" href="#" style="display: table-cell; padding: 0 30px 0 20px; vertical-align: middle;" id="search-button-listener">
+                <div id="search-button"><i class="fa fa-search"></i></div>
+              </a>
+              <div class="mk-fullscreen-search-overlay" id="mk-search-overlay">
+                <a href="#" class="mk-fullscreen-close" id="mk-fullscreen-close-button"><i class="fa fa-times"></i></a>
+                <div id="mk-fullscreen-search-wrapper">
+                  <form method="get" id="mk-fullscreen-searchform" action="">
+                    <input type="text" value="" placeholder="Search..." id="mk-fullscreen-search-input">
+                    <i class="fa fa-search fullscreen-search-icon"><input value="" type="submit"></i>
+                  </form>
+                </div>
+              </div>
+              </div>
+          </li>                      
         </ul>
-        <form method="GET" action="{% url 'index' %}" class="d-flex" role="search" style="margin-right: 500px; width: 400px;">
-          <input class="form-control me-2" type="search" name="query" placeholder="Site de arat" aria-label="Search">
-          <button class="btn text-white" type="submit">Ara</button>
-        </form>
+       
         {% if request.user.is_authenticated %}
        
         
        
-        <div class="dropdown" style="margin-right: 90px;" >
+        <div class="dropdown" style="margin-right: 90px;  font-family: 'Prompt', sans-serif;" >
          
           <a class="btn text-white dropdown-toggle" href="#" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
-              {{ request.user }}
+              <i class="fa-solid fa-user"></i>  {{ request.user }}
              
           </a>
           <ul class="dropdown-menu btn bg-white">
               
-              <li><a class="dropdown-item ilk" style="color: rgb(0, 0, 0);" href="{% url 'logoutUser' %}">Çıkış Yap</a></li>
               <li><a class="dropdown-item ilk" style="color: rgb(0, 0, 0);" href="{% url 'profil' %}">Profil</a></li>
+              <li><a class="dropdown-item ilk" style="color: rgb(0, 0, 0);" href="{% url 'logoutUser' %}">Çıkış Yap</a></li>
              
           
           </ul>
@@ -77,3 +92,32 @@ rel="stylesheet"
       </div>
     </div>
   </nav>
+
+  
+{% block js %}
+  <script>
+    var wHeight = window.innerHeight;
+ var sb = document.getElementById("search-button");
+ var closeSB = document.getElementById("mk-fullscreen-close-button");
+ var SearchOverlay = document.getElementById("mk-search-overlay");
+ var searchBar = document.getElementById("mk-fullscreen-searchform");
+ searchBar.style.top=wHeight/2 +'px';
+  console.log(wHeight);
+  window.addEventListener("resize", function(){
+    console.log(wHeight);
+     wHeight = window.innerHeight;
+     searchBar.style.top=wHeight/2 + 'px';
+  }, true);
+  document.addEventListener("click", function(){
+  sb.onclick = function(){
+  console.log("Opened Search for Element: ");
+  SearchOverlay.classList.add("mk-fullscreen-search-overlay-show");
+  };
+  closeSB.onclick = function(){
+    console.log("Closed Search for Element: " + closeSB);
+    SearchOverlay.classList.remove("mk-fullscreen-search-overlay-show");
+  };
+  }, true);
+  </script>
+{% endblock js %}
+  
