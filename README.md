@@ -10,4 +10,4 @@ dbsqlite ve migration dosyalarınız sizin local dosyalarınızdır projede yap�
 pip install django-embed-video
 
 <br>
-<strong>Not: Projenizi güncellerken localde olan veritabanınızı mutlaka saklayın.</strong>
+<strong>Not: Projenizi güncellerken localde olan veritabanınızı mutlaka saklayın..</strong>
