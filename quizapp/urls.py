@@ -22,6 +22,8 @@ urlpatterns = [
     path('django/',django, name="django" ),
     path('c#/',c, name="c" ),
     path('c++/',cc, name="cc" ),
+    #SINAV
+     path('htmlquiz/',htmlq, name="htmlq" ),
 
      #USER
     path('login/', loginUser, name="loginUser"),
