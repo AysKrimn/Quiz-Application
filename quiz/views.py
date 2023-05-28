@@ -13,22 +13,27 @@ def index (request):
 
 def ders (request):     
    
-    context={}
+    context = {}
+   
     return render(request,'dersler.html',context)
 
 # DERSLER
 
 def  html(request):
-	Tut = tutorial.objects.all()
+    
+	html = Html.objects.all()
+   
 	context = {
-	'Tut': Tut,
+	'html': html,
+    
 	}
+    
 	return  render(request, 'dersler/html.html', context)
 
 def  html_detail(request,pk):
-	Tut = tutorial.objects.get(pk=pk)
+	html = Html.objects.get(pk=pk)
 	context = {
-	'Tut': Tut,
+	'html': html,
 	}
 	return  render(request, 'detay/htmldetay.html', context)
 
@@ -67,6 +72,51 @@ def cc (request):
     context={}
     return render(request,'dersler/c++.html',context)
 # QUİZLER
+def htmlq(request):
+    
+    if request.method == 'POST':
+        score = 0
+        error_count = 0
+        blank_count = 0
+        wrong_htmlq = []
+
+        htmlq = HtmlQ.objects.all()
+       
+
+        total_htmlq = htmlq.count()
+
+        for question in htmlq:
+            selected_option = request.POST.get(str(question.id))
+            if selected_option:
+                if selected_option == question.correct_answer:
+                    score += 10
+                else:
+                    error_count += 1
+                    wrong_htmlq.append({
+                        'question': question,
+                        'selected_option': selected_option
+                    })
+            else:
+                blank_count += 1
+
+        success_percentage = "{:.2f}".format((score / (total_htmlq * 10)) * 100)
+        error_percentage = "{:.2f}".format((error_count / total_htmlq) * 100)
+        blank_percentage = "{:.2f}".format((blank_count / total_htmlq) * 100)
+
+        return render(request, 'sınav/htmlresult.html', {
+            'score': score,
+            'error_count': error_count,
+            'blank_count': blank_count,
+            'success_percentage': success_percentage,
+            'error_percentage': error_percentage,
+            'blank_percentage': blank_percentage,
+            'wrong_htmlq': wrong_htmlq
+        })
+
+    else:
+        htmlq = HtmlQ.objects.all()
+        return render(request, 'sınav/htmlquiz.html', {'htmlq': htmlq})
+#QUİZ BİTİŞ
 
 def profil (request):     
    
@@ -198,7 +248,7 @@ def loginUser(request):
             messages.warning(request, "Kullanıcı adı veya şifre yanlış!")
             return redirect("loginUser")
     
-    return render(request,'giris.html')
+    return render(request,'Giriş.html')
 
 def RegisterUser (request):
     if request.method == "POST":

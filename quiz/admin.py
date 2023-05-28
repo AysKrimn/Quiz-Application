@@ -31,4 +31,5 @@ admin.site.register(UserInfoStatus)
 class  tutorialAdmin(AdminVideoMixin, admin.ModelAdmin):
 	pass
 
-admin.site.register(tutorial, tutorialAdmin)
+admin.site.register(Html, tutorialAdmin)
+admin.site.register(HtmlQ)

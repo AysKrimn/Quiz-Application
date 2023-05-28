@@ -4,18 +4,36 @@ from django.contrib.auth.models import User
 from  embed_video.fields  import  EmbedVideoField
 
 # Create your models here.
-class  tutorial(models.Model):
+
+
+
+
+class  Html(models.Model):
+   
 	tutorial_Title = models.CharField(max_length=20000)
 	tutorial_Body = models.TextField()
 	tutorial_Video = EmbedVideoField()
+    
    
     
 
 	class  Meta:
-		verbose_name_plural = "Tutorial"
+		verbose_name_plural = "Html"
 
-	def  __str__(self):
+	def  __all__(self):
 		return  str(self.tutorial_Title) if  self.tutorial_Title  else  " "
+
+class HtmlQ(models.Model):
+    
+    question_text = models.CharField(max_length=200,null=True)
+    option_a = models.CharField(max_length=100,null=True)
+    option_b = models.CharField(max_length=100,null=True)
+    option_c = models.CharField(max_length=100,null=True)
+    option_d = models.CharField(max_length=100,null=True)
+    correct_answer = models.CharField(max_length=1, choices=[('a', 'A'), ('b', 'B'), ('c', 'C'), ('d', 'D')],null=True)
+
+    def __str__(self):
+        return self.question_text       
 
 
 
