@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+  <style>
+    body{
+      background: #0045c5dc;
+     
+    
+      
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: -webkit-linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151));
+      
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151))
+    }
+  </style>
+  <style>
+    .soru{
+      position: relative;
+      margin: auto;
+      width: 700px;
+      height: auto;
+      background: rgba(84, 83, 83, 0.24);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(9.6px);
+     -webkit-backdrop-filter: blur(9.6px);
+      color:rgb(255, 255, 255)
+     
+}
+
+
+  </style>
+{% endblock css %}
+{% block body %}
+
+
+
+<div class="soru" style="text-align: center; margin-top: 50px;">
+
+
+    <h2 style="text-align: center;">Quiz Sonucu</h2><hr>
+      <p> Puan: {{ score }}</p>
+      <p>Hatalı Cevap: {{ error_count }}</p>
+      <p>Boş Bırakılan Soru: {{ blank_count }}</p>
+      <p>Başarı Yüzdesi: {{ success_percentage }}%</p>
+      <p>Hata Yüzdesi: {{ error_percentage }}%</p>
+      <p>Boş Bırakılan Yüzdesi: {{ blank_percentage }}%</p>
+  
+      {% if wrong_cssq %}
+      <h3>Yanlış Cevaplanan Sorular:</h3>
+      <ul>
+          {% for wrong_cssq in wrong_cssq %}
+              <li>
+                  Soru:<span style="text-transform: capitalize;"> {{ wrong_cssq.question.question_text }}</span><br>
+                   Cevap: <span  style="text-transform: capitalize;">{{ wrong_cssq.question.get_correct_answer_display }}</span><br>
+                  Senin Cevabın: <span  style="text-transform: capitalize;">{{ wrong_cssq.selected_option }}</span>
+              </li>
+          {% endfor %}
+      </ul>
+  {% endif %}
+
+
+</div>
+<a class="nav-link text-dark main " href="{% url 'anasayfa' %}">Anasayfa</a>
+
+{% endblock body %}

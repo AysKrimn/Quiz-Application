@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
+{% load embed_video_tags %}
 {% load static %}
+
 {% block css %}
     <style>
         body{
@@ -14,23 +16,27 @@
             background: linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151))
         }
     </style>
+    <link rel="stylesheet" href="../../static/style.css">
 {% endblock css %}
+    
 {% block body %}
 {% include 'part/header.html' %}
 
 
+
+
 <div class="header vh100 gradient-custom">
 
-   
-    <div  class="col-md-8 offset-md-2 ">
-        <h1 style="color: white;">JAVASCRİPT</h1>
-        <hr style="color: white;">
-        {% for j in java %}
-        <h2><a  href="{% url 'java_detail' j.pk %}">{{ j.tutorial_Title}}</a></h2>
-        <p style="color: white;">{{ j.tutorial_Body | slice:':400' }}...</p>
-        {% endfor %}
+    <div  class="col-md-8 offset-md-2">
+        <h1 style="color: white;">{{ cşarp.tutorial_Title }}</h1>
+        <p class="icerik">{{ cşarp.tutorial_Body | linebreaks }}</p>
+        <h3 style="color: white;">Ders Videosu:</h3>
+    
+        {% video cşarp.tutorial_Video 'tiny' %}
+    
     </div>
-    <a href="{% url 'javaq' %}" class="btn btn-primary">Ders Değerlendirme Testi</a>
+   
+
    
 </div>
 

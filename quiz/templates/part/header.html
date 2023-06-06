@@ -19,6 +19,13 @@ rel="stylesheet"
   <!-- CSS -->
   <link rel="stylesheet" href="../static/style.css">
   <link rel="stylesheet" href="../static/animasyon.css">
+  <style>
+  .navbar{
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }
+  </style>
  
 {% endblock css %}
   
@@ -39,7 +46,7 @@ rel="stylesheet"
             <a class="nav-link text-dark main " href="{% url 'ders' %}">Dersler</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark main " href="{% url 'main' %}">Quziler</a>
+            <a class="nav-link text-dark main " href="{% url 'main' %}">İletişim</a>
           </li>                      
           <li class="nav-item">
             <div class="overlay">
@@ -94,6 +101,7 @@ rel="stylesheet"
 
   
 {% block js %}
+
   <script>
     var wHeight = window.innerHeight;
  var sb = document.getElementById("search-button");
