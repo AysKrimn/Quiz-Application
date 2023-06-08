@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<style>
+    body{
+      background: #0045c5dc;
+     
+    
+      
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: -webkit-linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151));
+      
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151))
+    }
+  </style>
+  <style>
+    .soru{
+      position: relative;
+      margin: auto;
+      width: 700px;
+      height: auto;
+      background: rgba(84, 83, 83, 0.24);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(9.6px);
+     -webkit-backdrop-filter: blur(9.6px);
+      color:rgb(255, 255, 255)
+     
+}
+
+.btn{
+  color: white;
+  background-color: black;
+}
+  </style>
+
+{% endblock css %}
+{% block body %}
+
+<h2 style="text-align: center; color: white;">Final Sınavına Hoş Geldiniz</h2>
+<div class="soru" style="text-align: center; margin-top: 50px;">
+  <form method="POST" action="{% url 'start_quiz' %}">
+      {% csrf_token %}
+      <label for="username" style="margin-top: 15px;">İsminiz Ve Soyisminiz:</label>
+      <input type="text" name="username" required>
+      <br><br>
+      <button type="submit" class="btn">Final Sınavına Başla</button>
+
+      <p style="margin-top: 10px;">Sınav Süreniz 60 dk dır</p>
+      <p>Soru Sayısı 60 tanedir Sürenizi İyi Kullanın</p>
+      <p>Sisteme Kayıtlı İsminiz Dışında Bir İsim Girerseniz Başarılı Olursanız Dahi Sınavınız İptal Edilir</p>
+      <p>Sınav Süresi Bittikten Sonra Sınav Sayfası Kapanacaktır Lütfen Süre Bitmeden Sınavınızı Gönderin</p>
+
+  </form>
+</div>
+
+
+
+
+{% endblock body %}

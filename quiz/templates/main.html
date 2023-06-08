@@ -5,111 +5,67 @@
 {% include 'part/header.html' %}
 
     
-  <div class="header vh100 gradient-custom">
+<div class="header vh100 gradient-custom"  >
 
    
 
 
-      <div class="container">
-          <div class="qtitle mt-5 text-white text-center">
-              <h3>Front-End</h3>
-          </div>
-          <div class="row mt-5">
-              <div class="col-md-3 mb-4">
-                  <div class="card ">
-                      <img src="../static/img/html5.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
-                      <div class="card-body">
-                        <h5 class="card-title">HTML5</h5>
-                        <p class="card-text">Kendini sınamak ister misin? HTML temelleri hakkında ne kadar bilgi sahibisin? Hadi test edelim!</p>
-                        <a href="#!" class="btn btn-primary">Button</a>
-                      </div>
-                    </div>
+  <div class=" container-fluid orta iletişim1" id="contact">
+    <div class="container">
+      <div class="innerwrap">
+      
+          <section class="section1 clearfix">
+              <div class="textcenter">
+                 
+                  <span class="seperator"></span>
+                  <h1>İletişim Formu</h1>
               </div>
-              <div class="col-md-3 mb-4">
-                  <div class="card">
-                      <img src="../static/img/css.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
-                      <div class="card-body">
-                        <h5 class="card-title">CSS3</h5>
-                        <p class="card-text">CSS hakkında ne kadar bilgi sahibisin? Kendini sınamak için hazır mısın? Hadi birlikte öğrenelim!</p>
-                        <a href="#!" class="btn btn-primary">Button</a>
-                      </div>
-                    </div>
+          </section>
+     
+     
+          <section class="section2 clearfix">
+              <div class="col2 column1 first">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3012.086751818843!2d28.872698315413125!3d40.9795811793036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cabd361d9f2bcd%3A0x109cda61c48e4b76!2sNeos%20Yaz%C4%B1l%C4%B1m%20Akademi!5e0!3m2!1sen!2str!4v1686053932856!5m2!1sen!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
-              <div class="col-md-3 mb-4">
-                  <div class="card">
-                      <img src="../static/img/bootstrap.webp" class="card-img-top" alt="Fissure in Sandstone"/>
-                      <div class="card-body">
-                        <h5 class="card-title">BOOTSTRAP</h5>
-                        <p class="card-text">Bootstrap ile tanışmak için en iyi yol sınamak olabilir. Hazır mısın? Birlikte bu konuda daha fazla öğrenelim!</p>
-                        <a href="#!" class="btn btn-primary">Button</a>
+              <div class="col2 column2 last">
+                  <div class="sec2innercont">
+                      <div class="sec2addr adres">
+                          <p style="color: black;">Cevizlik, Hüsreviye Sk. No:12, 34142 Bakırköy/İstanbul</p>
+                          <p style="color: black;"><span class="collig">Telefon Numarası :</span> 05013205358</p>
+                          <p style="color: black;"><span class="collig">Email :</span>  neosiletisim@gmail.com</p>
+                          
                       </div>
-                    </div>
+                  </div>
+                  <div class="sec2contactform">
+                      <h3 class="sec2frmtitle">Hemen İletişime Geçmek İçin Form Gönderin</h3>
+                      <form method="POST" >
+                        {% csrf_token %}
+                          <div class="clearfix">
+                             
+                              <input class="col2 first"  name="name"  type="text" placeholder="Adınız" required>
+                      
+                             
+                          </div>
+                          <div class="clearfix">
+        
+                              <input  class="col2 first" type="email" name="email" placeholder="Email" required>
+                              
+                          </div>
+                          <div class="clearfix">
+                              <textarea name="text" placeholder="Mesajınız..." required></textarea>
+                          </div>
+                          <button href="Anasayfa.html" type="submit" class="btnbt">Gönder</button>
+                          
+                      </form>
+                  </div>
+  
               </div>
-              <div class="col-md-3 mb-4">
-                  <div class="card">
-                      <img src="../static/img/js.webp" class="card-img-top" alt="Fissure in Sandstone"/>
-                      <div class="card-body">
-                        <h5 class="card-title">JAVASCRİPT</h5>
-                        <p class="card-text">JS öğrenmek için, neyin mümkün olduğunu keşfetmek yerine, kendini sınayabilirsin. Hadi birlikte test edelim!</p>
-                        <a href="#!" class="btn btn-primary">Button</a>
-                      </div>
-                    </div>
-              </div>
-          </div>
-
-
-          <div class="qtitle mt-5 text-white text-center">
-              <h3>Back-End</h3>
-          </div>
-
-
-          <div class="row mt-5">
-              <div class="col-md-3 mb-4">
-                  <div class="card">
-                      <img src="../static/img/python.webp" class="card-img-top" alt="Fissure in Sandstone"/>
-                      <div class="card-body">
-                        <h5 class="card-title">PYTHON</h5>
-                        <p class="card-text">Kendini sınamak ister misin? Python bilginle ne kadar ilerlediğini görelim. Haydi, öğrenmeye başlayalım!</p>
-                        <a href="#!" class="btn btn-primary">Button</a>
-                      </div>
-                    </div>
-              </div>
-              <div class="col-md-3 mb-4">
-                  <div class="card">
-                      <img src="../static/img/django.png" class="card-img-top" alt="Fissure in Sandstone"/>
-                      <div class="card-body">
-                        <h5 class="card-title">DJANGO</h5>
-                        <p class="card-text">Django öğrenmek için hazır mısın? Kendini sınamak istersen, bu quiz senin için! Hadi, test etmeye başlayalım.</p>
-                        <a href="#!" class="btn btn-primary">Button</a>
-                      </div>
-                    </div>
-              </div>
-              <div class="col-md-3 mb-4">
-                  <div class="card">
-                      <img src="../static/img/csharp.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
-                      <div class="card-body">
-                        <h5 class="card-title">C#</h5>
-                        <p class="card-text">C# öğrenmek için ne kadar ilerledin? Kendini sınayarak daha da ilerleyebilirsin! Haydi, birlikte sınayalım.</p>
-                        <a href="#!" class="btn btn-primary">Button</a>
-                      </div>
-                    </div>
-              </div>
-              <div class="col-md-3 mb-4">
-                  <div class="card">
-                      <img src="../static/img/cplusplus.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
-                      <div class="card-body">
-                        <h5 class="card-title">C++</h5>
-                        <p class="card-text">C++ öğrenmek için hazır mısın? Kendini sınayarak öğrenmenin en iyi yolu! Hadi, test etmeye başlayalım.</p>
-                        <a href="#!" class="btn btn-primary">Button</a>
-                      </div>
-                    </div>
-              </div>
-          </div>
-          <div class="qtitle mt-5 text-white text-center">
-              
-          </div>
+          </section>
+      
       </div>
   </div>
+  </div>
+</div>
   {% endblock body %}
     
 

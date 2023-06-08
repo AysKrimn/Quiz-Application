@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
    
 }
 
@@ -41,6 +42,7 @@ h1.main, p.demos {
   animation-delay: 18s;
 }
 .sp-container {
+  font-size: 40px !important;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -60,7 +62,7 @@ h1.main, p.demos {
   top: 0px;
   z-index: 1000;
 }
-.sp-container h2 {
+.sp-container h3 {
   position: absolute;
   top: 50%;
   line-height: 100px;
@@ -75,32 +77,32 @@ h1.main, p.demos {
   -ms-animation: blurFadeInOut 3s ease-in backwards;
   animation: blurFadeInOut 3s ease-in backwards;
 }
-.sp-container h2.frame-1 {
+.sp-container h3.frame-1 {
   -webkit-animation-delay: 0s;
   -moz-animation-delay: 0s;
   -ms-animation-delay: 0s;
   animation-delay: 0s;
 }
-.sp-container h2.frame-2 {
+.sp-container h3.frame-2 {
   -webkit-animation-delay: 3s;
   -moz-animation-delay: 3s;
   -ms-animation-delay: 3s;
   animation-delay: 3s;
 }
-.sp-container h2.frame-3 {
+.sp-container h3.frame-3 {
   -webkit-animation-delay: 6s;
   -moz-animation-delay: 6s;
   -ms-animation-delay: 6s;
   animation-delay: 6s;
 }
-.sp-container h2.frame-4 {
+.sp-container h3.frame-4 {
   font-size: 200px;
   -webkit-animation-delay: 9s;
   -moz-animation-delay: 9s;
   -ms-animation-delay: 9s;
   animation-delay: 9s;
 }
-.sp-container h2.frame-5 {
+.sp-container h3.frame-5 {
   -webkit-animation: none;
   -moz-animation: none;
   -ms-animation: none;
@@ -108,7 +110,7 @@ h1.main, p.demos {
   color: transparent;
   text-shadow: 0px 0px 1px #fff;
 }
-.sp-container h2.frame-5 span {
+.sp-container h3.frame-5 span {
   -webkit-animation: blurFadeIn 3s ease-in 12s backwards;
   -moz-animation: blurFadeIn 1s ease-in 12s backwards;
   -ms-animation: blurFadeIn 3s ease-in 12s backwards;
@@ -116,13 +118,13 @@ h1.main, p.demos {
   color: transparent;
   text-shadow: 0px 0px 1px #fff;
 }
-.sp-container h2.frame-5 span:nth-child(2) {
+.sp-container h3.frame-5 span:nth-child(2) {
   -webkit-animation-delay: 13s;
   -moz-animation-delay: 13s;
   -ms-animation-delay: 13s;
   animation-delay: 13s;
 }
-.sp-container h2.frame-5 span:nth-child(3) {
+.sp-container h3.frame-5 span:nth-child(3) {
   -webkit-animation-delay: 14s;
   -moz-animation-delay: 14s;
   -ms-animation-delay: 14s;

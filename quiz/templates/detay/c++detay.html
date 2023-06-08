@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load embed_video_tags %}
+{% load static %}
+
+{% block css %}
+    <style>
+        body{
+            background: #0045c5dc;
+           
+          
+            
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151));
+            
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151))
+        }
+    </style>
+    <link rel="stylesheet" href="../../static/style.css">
+{% endblock css %}
+    
+{% block body %}
+{% include 'part/header.html' %}
+
+
+
+
+<div class="header vh100 gradient-custom">
+
+    <div  class="col-md-8 offset-md-2">
+        <h1 style="color: white;">{{ cplus.tutorial_Title }}</h1>
+        <p class="icerik">{{ cplus.tutorial_Body | linebreaks }}</p>
+        <h3 style="color: white;">Ders Videosu:</h3>
+    
+        {% video cplus.tutorial_Video 'tiny' %}
+    
+    </div>
+   
+
+   
+</div>
+
+
+{% endblock body %}

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<style>
+    body{
+      background: #0045c5dc;
+     
+    
+      
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: -webkit-linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151));
+      
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: linear-gradient(to right, rgb(36, 44, 51), rgb(55, 90, 151))
+    }
+  </style>
+  <style>
+    .soru{
+      position: relative;
+      margin: auto;
+      width: 700px;
+      height: auto;
+      background: rgba(84, 83, 83, 0.24);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(9.6px);
+     -webkit-backdrop-filter: blur(9.6px);
+      color:rgb(255, 255, 255)
+     
+}
+
+
+  </style>
+{% endblock css %}
+{% block body %}
+
+<div class="soru" style="text-align: center; margin-top: 50px;">
+    <h2>Quiz Result</h2>
+    <p>Username: {{ quiz_result.username }}</p>
+    <p>Score: {{ quiz_result.score }}</p>
+    <p>Correct Questions: {{ quiz_result.correct_questions }}</p>
+    <p>Incorrect Questions: {{ quiz_result.incorrect_questions.count }}</p>
+    <p>Success Percentage: {{ quiz_result.success_percentage }}%</p>
+
+    {% if quiz_result.incorrect_questions.count > 0 %}
+        <h3>Incorrect Questions:</h3>
+        <ul>
+            {% for question in quiz_result.incorrect_questions.all %}
+                <li>
+                    <p>{{ question.question_text }}</p>
+                   
+                        {% if user_answer %}
+                            <p>Your Answer: {{ user_answer.selected_option }}</p>
+                       
+                        {% endif %}
+                   
+                    <p>Correct Answer: {{ question.correct_option }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>All questions answered correctly.</p>
+    {% endif %}
+    {% if quiz_result.success_percentage < 65 %}
+    <p>Belge almaya hak kazanamadınız.Başarı Yüzdesi %65 üzeri olamlı, lütfen eğitimlerinizi tekrar alın.</p>
+{% else %}
+    <p>Belge almaya hak kazandınız. E-mailinizi kontrol ediniz.</p>
+{% endif %}
+
+</div>
+
+
+{% endblock body %}

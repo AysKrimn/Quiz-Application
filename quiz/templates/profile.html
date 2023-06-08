@@ -12,16 +12,16 @@
       <div class="row">
           <div class="col-lg-4">
               <div style="height: 500px;" class="card mb-4">
-                  <div class="card-body text-center">
+                  <div  class="card-body text-center">
                       
                       {% if userinfo.image %}
-                      <img style="text-align: center; " src="{{ userinfo.image.url }}"
+                      <img  style="text-align: center; background-color: black; "  src="{{ userinfo.image.url }}" 
                           alt="avatar" class=" img-fluid" style="width: 150px; height: 150px; object-fit: cover;">
                           
                       {% else %}
                           
                         
-                              alt="avatar" class="rounded-circle img-fluid" style="width: 150px; height: 150px; object-fit: cover;">
+                              
                       {% endif %}
                           
                       <h5 class="my-3" style="color: black;">Kullanıcı Adı: {{ user.username }}</h5>
