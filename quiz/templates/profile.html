@@ -239,7 +239,10 @@
                       <div class="card mb-4 mb-md-0">
                           <div class="card-body"  style="color: black;">
                              
-                              <div class="btn btn-success w-100 statubtn">Yetenek Ekle</div>
+           
+                                <div title="Yetenek Eklemek İçin Sınav Olmalısın" class="btn btn-success w-100 statubtn">Yetenek Ekle</div>
+                       
+                            
                               <form method="POST" class="p-4 pt-2 mb-3" id="statuform" style="box-shadow: inset 0px 0px 8px 4px #00000030;display: none;">
                                   {% csrf_token %}
                                   <label for="title">Yetenek Adı</label>
@@ -287,7 +290,7 @@
                                   </div>
                               </div>
                               <div class="progress rounded mb-3" style="height: 10px;">
-                                  <div class="progress-bar" role="progressbar" style="width: {{ i.statu }}%;" aria-valuenow="{{ i.statu }}"
+                                  <div class="progress-bar" role="progressbar" style="width: {{i.statu}}%"; aria-valuenow="{{ i.statu }}"
                                       aria-valuemin="0" aria-valuemax="100"></div>
                               </div>
                               {% endfor %}

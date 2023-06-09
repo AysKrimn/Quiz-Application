@@ -5,9 +5,22 @@ from django.contrib import messages
 from .models import *
 
 
+# sınav sonuclarını ayarlayan fonksiyon
+def handleQuizPoint(request, title, quizSonuc):
+       # yeteneği oluştur   
+       UserInfoStatus.objects.update_or_create(user=request.user, title=title, statu=quizSonuc)
+
+       user = UserInfo.objects.filter(user=request.user).first()
+       yetenek = UserInfoStatus.objects.filter(user=request.user).last()
+       user.status.add(yetenek)
+
 # Create your views here.
 def index (request):     
    
+    if (request.user.is_authenticated):
+        return redirect('anasayfa')
+    
+
     context={}
     return render(request,'index.html',context)
 
@@ -351,6 +364,11 @@ def pythonq(request):
         error_percentage = "{:.2f}".format((error_count /  total_pythonq) * 100)
         blank_percentage = "{:.2f}".format((blank_count /  total_pythonq) * 100)
 
+
+        quizSonuc = (score / (  total_pythonq * 10)) * 100
+        # yetenek oluştur
+        handleQuizPoint(request, 'Python', quizSonuc)
+
         return render(request, 'sınav/pythonresult.html', {
             'score': score,
             'error_count': error_count,
@@ -395,6 +413,12 @@ def djangoq(request):
         success_percentage = "{:.2f}".format((score / (  total_djangoq * 10)) * 100)
         error_percentage = "{:.2f}".format((error_count /   total_djangoq) * 100)
         blank_percentage = "{:.2f}".format((blank_count /   total_djangoq) * 100)
+
+        # yetenek ekle
+        quizSonuc = (score / (  total_djangoq * 10)) * 100
+        # yetenek oluştur
+        handleQuizPoint(request, 'Django', quizSonuc)
+
 
         return render(request, 'sınav/djangoresult.html', {
             'score': score,
@@ -657,6 +681,9 @@ def deleteStatu(request,sid):
 
 #USER Alanı
 def loginUser(request):
+
+    if request.user.is_authenticated:
+        return redirect('anasayfa')
     
     if request.method == "POST":
         username = request.POST.get("username")
@@ -740,8 +767,14 @@ def RegisterUser (request):
     return render(request,'kayıtol.html')
 
 def logoutUser(request):
-    logout(request)
-    return redirect('loginUser')
+
+    if request.user.is_authenticated:
+        logout(request)
+        return redirect('loginUser')
+    
+    # kullanıcı giriş yapmamışstır
+    else:
+        return redirect('loginUser')
 
 
 def main (request):

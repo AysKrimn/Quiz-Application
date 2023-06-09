@@ -34,19 +34,26 @@
 {% endblock css %}
 {% block body %}
 
-<div class="soru" style="text-align: center; margin-top: 50px;">
-    <h2>Quiz Result</h2>
-    <p>Username: {{ quiz_result.username }}</p>
-    <p>Score: {{ quiz_result.score }}</p>
-    <p>Correct Questions: {{ quiz_result.correct_questions }}</p>
-    <p>Incorrect Questions: {{ quiz_result.incorrect_questions.count }}</p>
-    <p>Success Percentage: {{ quiz_result.success_percentage }}%</p>
+<div class="soru" style="text-align: center; margin-top: 50px; ">
+    <h2>Final Sınav Sonucu</h2>
+    <p>İsim Soyisim: {{ quiz_result.username }}</p>
+    <p>Puan: {{ quiz_result.score }}</p>
+    <p>Doğru Sorular: {{ quiz_result.correct_questions }}</p>
+    <p>Yanlış Sorular: {{ quiz_result.incorrect_questions.count }}</p>
+    <p>Başarı Yüzdesi: {{ quiz_result.success_percentage }}%</p>
+     
+    {% if quiz_result.success_percentage < 65 %}
+    <p>Belge almaya hak kazanamadınız.Başarı Yüzdesi %65 üzeri olamlı, lütfen eğitimlerinizi tekrar alın.</p>
+{% else %}
+    <p>Belge almaya hak kazandınız. E-mailinizi kontrol ediniz.</p>
+{% endif %}
+
 
     {% if quiz_result.incorrect_questions.count > 0 %}
-        <h3>Incorrect Questions:</h3>
+        <h3>Hatalı Cevaplar:</h3>
         <ul>
             {% for question in quiz_result.incorrect_questions.all %}
-                <li>
+                <li style="list-style-type: none;">
                     <p>{{ question.question_text }}</p>
                    
                         {% if user_answer %}
@@ -54,19 +61,14 @@
                        
                         {% endif %}
                    
-                    <p>Correct Answer: {{ question.correct_option }}</p>
+                    <p>Doğru Cevap: {{ question.correct_option }}</p>
                 </li>
             {% endfor %}
         </ul>
     {% else %}
         <p>All questions answered correctly.</p>
     {% endif %}
-    {% if quiz_result.success_percentage < 65 %}
-    <p>Belge almaya hak kazanamadınız.Başarı Yüzdesi %65 üzeri olamlı, lütfen eğitimlerinizi tekrar alın.</p>
-{% else %}
-    <p>Belge almaya hak kazandınız. E-mailinizi kontrol ediniz.</p>
-{% endif %}
-
+    
 </div>
 
 

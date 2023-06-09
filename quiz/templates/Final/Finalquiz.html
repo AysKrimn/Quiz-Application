@@ -104,6 +104,8 @@
 {% block body %}
 
 <h2 style="text-align: center; color: #ffffff;">Final Sınavı</h2>
+<p class="soru" style="text-align: center; font-size: 25px; position: sticky; top: 0; z-index: 99;">Sınav Süreniz: <span id="countdown">60:00</span></p>
+
 <form method="POST" action="{% url 'quiz' %}">
     {% csrf_token %}
     {% for question in questions %}
@@ -138,5 +140,37 @@
 
 
 
+{% block js %}
+    <script>
+          // Başlangıç süresi (dakika cinsinden)
+          var duration = 60;
+
+          // Sayfa yüklendiğinde geri sayımı başlat
+          window.onload = function() {
+              startCountdown();
+          };
+  
+          function startCountdown() {
+              var timer = duration * 60;
+              var display = document.getElementById('countdown');
+  
+              var countdownInterval = setInterval(function () {
+                  var minutes = Math.floor(timer / 60);
+                  var seconds = timer % 60;
+  
+                  minutes = minutes < 10 ? "0" + minutes : minutes;
+                  seconds = seconds < 10 ? "0" + seconds : seconds;
+  
+                  display.textContent = minutes + ":" + seconds;
+  
+                  if (--timer < 0) {
+                      clearInterval(countdownInterval);
+                      window.close(); // Süre bittiğinde sayfayı kapat
+                  }
+              }, 1000);
+          }
+    </script>
+{% endblock js %}
+    
 
 {% endblock body %}
