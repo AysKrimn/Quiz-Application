@@ -272,13 +272,20 @@ class UserInfo(models.Model):
     user=models.ForeignKey(User, verbose_name=("Kullanıcı"), on_delete=models.CASCADE)
     password=models.CharField(("Şifre"), max_length=50)
     job= models.CharField(("İş"), max_length=50,default="-")
-    image=models.FileField(("Fotoğraf"), upload_to=None, max_length=100,default='None/download.jpg')
+    image=models.FileField(("Fotoğraf"), upload_to="Uploads", max_length=100)
     phone=models.CharField(("Telefon Numarası"), max_length=50, default="-")
     adress=models.CharField(("Adres"), max_length=50, default="-")
     status=models.ManyToManyField(UserInfoStatus, verbose_name=("Yetenekler") )
 
     def __str__(self):
         return self.user.username
+    
+
+    def handleImage(self):
+          if self.image:
+                return self.image.url
+          else:
+                return "/static/img/x.ico"
 
 class Contact(models.Model):
     name = models.CharField(("İsim"), max_length=50)
