@@ -11,3 +11,10 @@ pip install django-embed-video
 
 <br>
 <strong>Not: Projenizi güncellerken localde olan veritabanınızı mutlaka saklayın..</strong>
+
+
+![](image/sh.png)
+
+![](image/sh2.png)
+
+![](image/sh3.png)
